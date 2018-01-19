@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {GolfCourseService} from '../GolfCourse/golf-course-service';
-import {GolfCourse} from '../GolfCourse/golf-course';
-
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +6,5 @@ import {GolfCourse} from '../GolfCourse/golf-course';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
-  pageTitle = 'Welcome';
-  description = 'Please Choose a Golf Course';
-  golfCourses: GolfCourse[];
-  constructor(private golfCourseService: GolfCourseService) {
-
-  }
-
-  ngOnInit() {
-    this.golfCourseService.getGolfCourses(4, 5, 5).subscribe(((GolfCourses: any) => {
-      this.golfCourses = GolfCourses.courses;
-      console.log(this.golfCourses);
-    }));
-  }}
+export class AppComponent {}
 

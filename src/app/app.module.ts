@@ -11,12 +11,14 @@ import { RouterModule, Routes} from '@angular/router';
 import { GolfCourseService } from '../GolfCourse/golf-course-service';
 import {HttpClientModule} from '@angular/common/http';
 import {GolfCardComponent} from '../golf-card/golf-card.component';
+import { WelcomeComponent } from '../welcome/welcome.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GolfCardComponent
+    GolfCardComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,9 @@ import {GolfCardComponent} from '../golf-card/golf-card.component';
     MatIconModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: 'golf-card', component: GolfCardComponent}
+      {path: 'golf-card', component: GolfCardComponent},
+      {path: '', pathMatch: 'full', redirectTo: 'welcome'},
+      { path: '**', redirectTo: 'welcome' }
     ])
   ],
   providers: [

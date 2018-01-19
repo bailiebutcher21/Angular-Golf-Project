@@ -10,22 +10,26 @@ import {MatInputModule, MatSelectModule, MatMenuModule, MatTableModule, MatIconM
 import { RouterModule, Routes} from '@angular/router';
 import { GolfCourseService } from '../GolfCourse/golf-course-service';
 import {HttpClientModule} from '@angular/common/http';
+import {GolfCardComponent} from '../golf-card/golf-card.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    GolfCardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    HttpModule,
     MatInputModule,
     MatSelectModule,
     MatTableModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {path: 'golf-card', component: GolfCardComponent}
+    ])
   ],
   providers: [
     GolfCourseService

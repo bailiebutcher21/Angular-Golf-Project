@@ -6,16 +6,16 @@ import {GolfCourse} from './golf-course';
 @Injectable()
 export class GolfCourseService {
 
-  url: string = 'https://golf-courses-api.herokuapp.com/courses/';
+  url: string = 'https://golf-courses-api.herokuapp.com';
 
   constructor(private httpClient: HttpClient) { }
 
   getGolfCourses(latitude: number, longitude: number, radius: number): Observable<GolfCourse[]> {
-    return this.httpClient.post<GolfCourse[]>('${this.url}/courses',
+    return this.httpClient.post<GolfCourse[]>(`${this.url}/courses`,
       {
         latitude: 40.396419,
         longitude: -111.9328359,
-        radius: 10
+        radius: 25,
       });
   }
 }

@@ -6,7 +6,7 @@ import {HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatInputModule, MatSelectModule, MatMenuModule, MatTableModule, MatIconModule } from '@angular/material';
+import { MatInputModule, MatSelectModule, MatMenuModule, MatTableModule, MatIconModule, MatOption} from '@angular/material';
 import { RouterModule, Routes} from '@angular/router';
 import { GolfCourseService } from '../GolfCourse/golf-course-service';
 import {HttpClientModule} from '@angular/common/http';
@@ -26,10 +26,12 @@ import { WelcomeComponent } from '../welcome/welcome.component';
     BrowserAnimationsModule,
     MatInputModule,
     MatSelectModule,
+    MatOption,
     MatTableModule,
     MatIconModule,
     HttpClientModule,
     RouterModule.forRoot([
+      {path: 'welcome', component: WelcomeComponent},
       {path: 'golf-card', component: GolfCardComponent},
       {path: '', pathMatch: 'full', redirectTo: 'welcome'},
       { path: '**', redirectTo: 'welcome' }

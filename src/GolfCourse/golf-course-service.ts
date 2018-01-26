@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {GolfCourse} from './golf-course';
+import {catchError} from "rxjs/operators";
 
 @Injectable()
 export class GolfCourseService {
-
-  url: string = 'https://golf-courses-api.herokuapp.com';
-
+  url = 'https://golf-courses-api.herokuapp.com';
+  selected: number;
   constructor(private httpClient: HttpClient) { }
 
   getGolfCourses(latitude: number, longitude: number, radius: number): Observable<GolfCourse[]> {
@@ -19,4 +19,7 @@ export class GolfCourseService {
       });
   }
 }
-
+  // getSelectedCourse(courseId: number): Observable<any[]> {
+  // return this.httpClient
+    // .get<Course[]>(this.url + '/'+ courseId)
+// }

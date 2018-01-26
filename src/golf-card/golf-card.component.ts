@@ -3,6 +3,7 @@ import { GolfCourse} from '../GolfCourse/golf-course';
 import {GolfCourseService} from '../GolfCourse/golf-course-service';
 import {MatTableModule} from '@angular/material/table';
 
+
 @Component({
   selector: 'app-golf-card',
   templateUrl: './golf-card.component.html',
@@ -11,6 +12,6 @@ import {MatTableModule} from '@angular/material/table';
 export class GolfCardComponent {
 
 }
-
+export class GridListOverviewExample {}
 
 

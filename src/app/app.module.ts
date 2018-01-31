@@ -7,13 +7,15 @@ import {HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatInputModule, MatSelectModule, MatMenuModule, MatTableModule, MatIconModule } from '@angular/material';
+import { MatInputModule, MatSelectModule, MatMenuModule, MatTableModule, MatIconModule, MatTableDataSource } from '@angular/material';
 import { RouterModule, Routes} from '@angular/router';
 import { GolfCourseService } from '../GolfCourse/golf-course-service';
 import {HttpClientModule} from '@angular/common/http';
 import {GolfCardComponent} from '../golf-card/golf-card.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {AngularFireModule} from 'angularfire2';
+
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
       {path: 'golf-card', component: GolfCardComponent},
       {path: '', pathMatch: 'full', redirectTo: 'welcome'},
       { path: '**', redirectTo: 'welcome' }
-    ])
+    ]),
+      //AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [
     GolfCourseService

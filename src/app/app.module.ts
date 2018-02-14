@@ -15,7 +15,9 @@ import {GolfCardComponent} from '../golf-card/golf-card.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {AngularFireModule} from 'angularfire2';
-
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
+import {environment} from '../environments/environment';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import {AngularFireModule} from 'angularfire2';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule,
@@ -34,13 +38,13 @@ import {AngularFireModule} from 'angularfire2';
     MatIconModule,
     MatGridListModule,
     HttpClientModule,
+    ToastModule.forRoot(),
     RouterModule.forRoot([
       {path: 'welcome', component: WelcomeComponent},
       {path: 'golf-card', component: GolfCardComponent},
       {path: '', pathMatch: 'full', redirectTo: 'welcome'},
       { path: '**', redirectTo: 'welcome' }
     ]),
-      //AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [
     GolfCourseService

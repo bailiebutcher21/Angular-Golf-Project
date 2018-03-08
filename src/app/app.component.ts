@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {GolfCourseService} from '../GolfCourse/golf-course-service';
+import {GolfCourse} from '../GolfCourse/golf-course';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {}
+export class AppComponent implements OnInit {
+
+  constructor() {
+
+  }
+
+  ngOnInit() { }}
 

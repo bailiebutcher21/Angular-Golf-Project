@@ -17,6 +17,7 @@
             Par: {{col.par}}<br/>
             Hcp: {{col.hcp}}<br/>
             Yards: {{col.yards}}
+
           </div>
         </mat-header-cell>
         <mat-cell *matCellDef="let scorecard"><div>{{scorecard[col]}}</div></mat-cell>
@@ -36,6 +37,8 @@
     </mat-table>
 
   </div>
+
+
 
   <button mat-button [routerLink] = " ['/welcome']">START NEW
     GAME</button>
